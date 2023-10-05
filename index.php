@@ -19,9 +19,9 @@ class Game
     public function gameStart()
     {
         echo <<<START
-Game started.
-{$this->player1->name}'s win odds {$this->player1->checkOdds($this->player2)}
-{$this->player2->name}'s win odds {$this->player2->checkOdds($this->player1)}
+Game started.<br>
+{$this->player1->name}'s win odds {$this->player1->checkOdds($this->player2)}<br>
+{$this->player2->name}'s win odds {$this->player2->checkOdds($this->player1)}<br>
 
 START;
 
@@ -65,10 +65,10 @@ START;
     {
         //Winner is player who has !=0 points
         echo <<<END
-Game Over.
-{$this->player1->name}: {$this->player1->points}
-{$this->player2->name}: {$this->player2->points}
-Winner is {$this->winCondition()->name}
+Game Over.<br>
+{$this->player1->name}'s total points: {$this->player1->points}<br>
+{$this->player2->name}'s total points: {$this->player2->points}<br>
+Winner is {$this->winCondition()->name}<br>
 Total flips: {$this->flips}
 END;
     }
@@ -99,8 +99,8 @@ class Player
 }
 
 $game = new Game (
-    new Player ('Jane', 100),
-    new Player ('Joe', 100)
+    new Player ('Cassandra', 100),
+    new Player ('Michael', 100)
 );
 
 $game->gameStart();
